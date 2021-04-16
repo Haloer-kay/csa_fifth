@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day."
+        var smatch=str.match(/\?[a-z]/g)
+        var ssear=str.search(/\?[a-z]/g)
+        var s1=smatch.join()[1]
+        var s2=s1.toUpperCase()
+        str=str.replace(s1,s2)
+        var result=str.replace(/\?{1,}|�{1,}/g," ")
+        result=result.replace(/\s+/g,' ')
+        console.log(result) // 'I'm going to take a trip to Daocheng on May Day.'
+    </script>
+</body>
+</html>
