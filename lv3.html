@@ -8,7 +8,7 @@
 </head>
 <body>
 <script>
-   function Student(name) {
+    function Student(name) {
             function People(name) {
                 setTimeout(function () {
                     console.log('Hi! This is ' + name + '!');
@@ -22,17 +22,19 @@
                         continue;
                     }
                     console.log('Wake up after ' + time);
-                }, 0)
+                },0)
                 return this;
             }
 
             People.prototype.sleepFirst = function (time) {
+                setTimeout(function () {
                 var ntime = (new Date()).getTime();
                 while ((new Date()).getTime() - ntime < time * 1000) {
                     continue;
                 }
                 console.log('Wake up after ' + time);
-                return this;
+            },0)
+            return this;
             }
             People.prototype.study = function (course) {
                 setTimeout(function () {
@@ -40,7 +42,6 @@
                 }, 0)
                 return this;
             }
-
             return new People(name);
         }
         //Student('fxy');
